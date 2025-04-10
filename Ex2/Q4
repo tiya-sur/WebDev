@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expenses and Income Table</title>
+<style>
+table, th, td {
+  border: 2px solid purple;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+/* Add color styling for cells (optional) */
+.q1 { background-color: #FF6347; } /* Red */
+.q2 { background-color: darkmagenta; } /* Pink */
+.q3 { background-color: #87CEFA; } /* Light blue */
+.q4 { background-color: #008000; } /* Green */
+</style>
+</head>
+<body>
+
+<h1>Expenses and Income Table</h1>
+
+<table border="7">
+<tr>
+<th rowspan="2">Year</th>
+<th rowspan="2">Quarter</th>
+<th colspan="2">Expenses</th>
+<th colspan="2">Income</th>
+</tr>
+<tr>
+<th>Quetta</th>
+<th>Dubai</th>
+<th>Quetta</th>
+<th>Dubai</th>
+</tr>
+<tr>
+<td rowspan="4">2021</td>
+<td class="q1">1</td>
+<td class="q1">1,900</td>
+<td class="q1">8,650</td>
+<td class="q1">9,800</td>
+<td class="q1">7,780</td>
+</tr>
+<tr>
+<td class="q2">2</td>
+<td class="q2">2,230</td>
+<td class="q2">8,650</td>
+<td class="q2">8,500</td>
+<td class="q2">8,670</td>
+</tr>
+<tr>
+<td class="q3">3</td>
+<td class="q3">4,000</td>
+<td class="q3">8,650</td>
+<td class="q3">9,900</td>
+<td class="q3">9,870</td>
+</tr>
+<tr>
+<td class="q4">4</td>
+<td class="q4">2,200</td>
+<td class="q4">8,650</td>
+<td class="q4">9,800</td>
+<td class="q4">9,900</td>
+</tr>
+<tr>
+<td rowspan="4">2022</td>
+<td class="q1">1</td>
+<td class="q1">7,780</td>
+<td class="q1">8,650</td>
+<td class="q1">7,780</td>
+<td class="q1">9,000</td>
+</tr>
+<tr>
+<td class="q2">2</td>
+<td class="q2">8,670</td>
+<td class="q2">8,650</td>
+<td class="q2">8,670</td>
+<td class="q2">8,500</td>
+</tr>
+<tr>
+<td class="q3">3</td>
+<td class="q3">9,870</td>
+<td class="q3">8,650</td>
+<td class="q3">9,870</td>
+<td class="q3">9,900</td>
+</tr>
+<tr>
+<td class="q4">4</td>
+<td class="q4">9,900</td>
+<td class="q4">8,650</td>
+<td class="q4">9,900</td>
+<td class="q4">9,800</td>
+</tr>
+<tr>
+<td colspan="6">2013</td>
+</tr>
+</table>
+</body>
+</html>
