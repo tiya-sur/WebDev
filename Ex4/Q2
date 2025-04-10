@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            for.htm
+        </title>
+    </head>
+    <body>
+        <fieldset>
+            <legend align="top" style="color: red">Personal Details</legend>
+            <label for="usname">Name    :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" id="usname" name="usname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <br>
+     <br>
+             <label for="pass">Password    :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="text" id="pass" name="pass">&nbsp;&nbsp;&nbsp;&nbsp;
+           <br>
+           <br>
+           <label for="sname">E-mail id    :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="text" id="sname" name="sname">&nbsp;&nbsp;&nbsp;&nbsp;
+           <br>
+           <label for="uname">Gender     :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="radio" id="m" name="m">
+           <label for="m">Male</label>
+            <label><input type="radio" checked>Female</label>
+           <br>
+           <br>
+           <label for="textbox">  DOB:   </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" id="textbox" name="username" value="mm/dd/yyyy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<br>
+            <label for="mob">Mobile#   :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="mob" name="mob">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </fieldset>
+        <fieldset>
+
+            <legend align="top" style="color: red">Eductaional Qualification</legend>
+            <form>
+              <span>
+            <label for="fruits">Degree:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <select name="fruits" id="fruits">
+        <optgroup label="UG">
+            <option value="app">BE</option>
+            <option value="pea">BTech</option>
+            <option value="p">BSc</option>
+            <option value="pa">BA</option>
+            <option value="ea">BCA</option>
+            <option value="a">BBA</option>
+            <option value="pear">Others</option>
+        </optgroup>
+       <optgroup label="PG">
+        <option value="or">ME</option>
+        <option value="gr">MTech</option>
+        <option value="man">MSc</option>
+        <option value="li">MA</option>
+        <option value="ma">MCA</option>
+        <option value="an">MBA</option>
+        <option value="n">Others</option>
+       </optgroup>
+      </select>
+    </span>
+    <span>
+        <label for="dropdown2">Engineering:</label>
+<select id="dropdown2" name="dropdown2">
+<option value="optionA">CSE</option>
+<option value="optionB">ECE</option>
+<option value="optionC">EEE</option>
+<option value="optionB">CIVIL</option>
+<option value="optionC">MECH</option>
+             </select>
+           </span>
+           </form>
+         </fieldset>
+
+         <label for="j">Hobbies: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="checkbox" id="i" name="i">
+<label for="i">Playing Chess</label>
+<input type="checkbox" id="r" name="r">
+<label for="r">Reading Books</label>
+<p>Favourite Colour:</p>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+          
+          <td style="background-color: #cccccc; padding: 5px;">
+            <table border="0">
+              <tr>
+                <td style="background-color: #000000; width: 50px; height: 20px;"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <legend style="color: red">Address</legend>
+<textarea rows="10" cols="100" name="comment" form="usrform">
+    Enter your address here...</textarea><br>
+    <table>
+        <tr>
+          <td>Attach Resume:</td>
+          <td>
+            <input type="text" readonly style="background-color: lightgrey;">
+          </td>
+          <td>
+            <button>Browse...</button>
+          </td>
+          <td>
+            <button>Submit</button>
+          </td>
+        </tr>
+      </table>
