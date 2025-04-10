@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img src="Screenshot 2024-12-31 030345.png" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="_blank" alt="Venus: Morning Star " title="Venus: Morning Star " href="venus.htm" coords="258,283,34" shape="circle">
+            <area target="_blank" alt="Earth: Blue Planet " title="Earth: Blue Planet " href="earth.htm" coords="420,378,61" shape="circle">
+            <area target="_blank" alt="Jupiter: Largest Planet" title="Jupiter: Largest Planet" href="jupiter.htm" coords="576,274,78" shape="circle">
+            <area target="_blank" alt="Saturn: Ring Planet" title="Saturn: Ring Planet" href="saturn.htm" coords="721,416,40" shape="circle">
+            <area target="_blank" alt="Sun: Ball of Fire" title="Sun: Ball of Fire" href="sun.htm" coords="7,534,4,320,76,316,135,330,191,373,228,438,227,533" shape="poly">
+            <area target="_blank" alt="Pluto: Dwarf Planet" title="Pluto: Dwarf Planet" href="pluto.htm" coords="874,87,20" shape="circle">
+            <area target="_blank" alt="My Space: Tiya 23BCE5143" title="My Space: Tiya 23BCE5143" href="about.htm" coords="233,65,2,4" shape="rect">
+        
+        </map>
+    </body>
+    
+</html>
