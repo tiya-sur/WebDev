@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>greeting.html</title>
+      
+        <style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+body {
+  background-image: url('https://th.bing.com/th/id/R.cd4184aa3651af6d8411b78ad93d40fb?rik=NBtbQC%2fx1453rw&riu=http%3a%2f%2fwallpaperswide.com%2fdownload%2fthe_up_movie-wallpaper-960x600.jpg&ehk=uYcDjggEQILUqfBBNe9ws4i09Dthkk0OIR5GwoZcFe0%3d&risl=&pid=ImgRaw&r=0');
+  background-repeat: no-repeat;
+}
+.button
+{
+  max-width: 500px;
+  margin: auto;
+  color:blueviolet;
+}
+        
+      </style>
+    </head>
+    <body style="background-image: url('https://wallpapers.com/images/hd/pink-party-balloons-background-w2doo78gwsa1ndac.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+      <div class="content">
+      <h2>Click this button for a surprise!</h2>
+      </div>
+      <div class="button">
+        <a href="birthday.htm">Click Me!</a>
+      </div>
+      <div style="text-align: center;">
+      <img src="https://i.pinimg.com/originals/17/4b/39/174b394877f3aa1e17f6a67ef550ddd9.gif" alt="Online Animated GIF" aling="center">
+    </div>
+    </body>
+</html>
