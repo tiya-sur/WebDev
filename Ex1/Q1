@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>home.html</title>
+    </head>
+    <body style="background-image: url('https://wallpapercave.com/wp/f2nbsPJ.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+
+       <h1 style="font-family:Verdana;color:blue;">Welcome to my page-23BCE5143</h1>
+       <!--Displaying aplhabets from small to larg font-->
+       <h6 style="font-family:Lucida Sans;color:yellow;">A</h6>
+       <h5 style="font-family:Courier New;color:brown;">B</h5>
+       <h4 style="font-family:Gill Sans;color:navy;">C</h4>
+    <h3 style="font-family:Segoe UI;color:red;">D</h3>
+       <h2 style="font-family:Times New Roman;color:darkcyan;">E</h2>
+      <h1 style="font-family:serif;color:blueviolet;">F</h1>
+      <!-- displaying name -->
+      <b>Tiya</b>
+      <u>sur</u>
+      <!--display paragraphs-->
+      <p style="background-color: yellow;">My ambition is becoming a good person and a good engineer</p>
+      <b><i>My hobbies are reading and writing</i></b>
+      <!--This is a comment-->
+      <!--To diaplay the equations-->
+      <!--display equations-->
+      <h3>(a-b)<sup>2</sup>=a<sup>2</sup>-2ab+b<sup>2</sup></h3>
+      <h3>2H<sub>2</sub>+O<sub>2</sub>=2H<sub>2</sub>O</h3>
+      <!-- A C program to display account number and balance-->
+      <h2>Account Details</h2>
+    <p><strong>Account Number:</strong> 1234567890</p>
+    <p><strong>Balance:</strong> ₹2500.75</p>
+    
+ <!--Including marquee-->
+ <marquee width="60%" direction="down" height="100px">
+Register Number:23BCE5143
+</marquee>
+<!--inserting a image aligned to right side of screen-->
+<img align="right" 
+src=
+"https://www.nicepng.com/png/detail/28-287469_small-png-book-icon.png" 
+alt="">
+<!--Using div tag-->
+<div class="MyDiv1">
+    <h1>the first paragraph</h1>
+    <p>This is my first class</p>
+</div>
+<div class="MyDiv2">
+    <h1>This is second paragraph</h1>
+    <p>I love books</p>
+</div>
+<div >
+<!--Using maito-->
+<a href="mailto:tiya@gmail.com">Send Email</a>
+<h2>This is HTML abbr Tag</h2>
+<!--using acronym-->
+<abbr title="GameOfThrones">GOT</abbr><br />
+<abbr title="JungleBook">JB</abbr>
+<br>
+<!--Using meter and progress bar-->
+<label for="disk_d">Disk usage D:</label><br>
+<meter id="disk_d" value="0.6">60%</meter>
+<progress value="22" max="100"></progress>
+    </body>
+    <h6>Scroll Down to See the Link</h6>
+  </div>
+  <!--Using summary tag-->
+  <details>
+    <summary>What is HTML?</summary>
+    <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages and web applications.</p>
+  </details>
+  <!--creating a link at the bottom of the page -->
+  <a href="home.htm" style="display: block; text-align: center;">Go to Top</a>
+  <div id="top"></div>
+   
+</html>
