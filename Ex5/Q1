@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+      height: 100vh;
+      gap: 10px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav {
+      grid-area: nav;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    main {
+      grid-area: main;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    aside {
+      grid-area: aside;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .profile-photo {
+      display: block;
+      margin: 10px auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    progress {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    meter {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+    }
+
+    figure figcaption {
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    details {
+      margin-top: 10px;
+    }
+    .skills-box {
+      background-color: #eef5ff;
+      border: 1px solid #d0d7e5;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .skills-box ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .skills-box ul li {
+      margin:5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>My Professional Resume</header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#media">Media</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>A motivated software engineer with 5+ years of experience in building scalable web applications.</p>
+      <figure>
+        <img src="https://img00.deviantart.net/bc0b/i/2015/225/5/e/shin_chan_vectorial_by_markef-d95i293.png" alt="Profile Photo" class="profile-photo">
+        <figcaption>Tiya Sur - Software Engineer</figcaption>
+      </figure>
+    </section>
+    
+    <section id="education">
+      <h2>Education</h2>
+      <article>
+        <h3>Student of Computer Science</h3>
+        <p>VIT University,Chennai, 2027</p>
+      </article>
+    </section>
+    <br></br>
+    <section id="experience">
+      <h2>Experience:-</h2>
+      <article>
+        <h3>Software Engineer</h3>
+        <p>ABC Corp, 2020-2023</p>
+        <ul>
+          <li>Developed scalable web applications using modern frameworks.</li>
+          <li>Led a team of 5 developers in creating an e-commerce platform.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-box">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li>Proficient in JavaScript, Python, and C++</li>
+          <li>Certified AWS Developer</li>
+        </ul>
+      </div>
+      <p>HTML5, CSS3,C++</p>
+      <progress value="80" max="100">40%</progress>
+      <p>Figma</p>
+      <progress value="70" max="100">70%</progress>
+    </section>
+
+    <section id="media">
+      <h2>Media:-</h2>
+      <details>
+        <summary>Hobbies</summary>
+        <p>Photography, Blogging, Reading</p>
+      </details>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Quick Facts</h2>
+    <ul>
+      <li>Proficient in HTML5, CSS3, and JavaScript</li>
+      <li>5+ years of professional experience</li>
+      <li>Certified Scrum Master</li>
+      <li>Published 3 technical articles</li>
+    </ul>
+  </aside>
+
+  <footer>
+    &copy; 2025 John Doe. All rights reserved.<br>
+    Contact: johndoe@example.com
+  </footer>
+</body>
+</html>
