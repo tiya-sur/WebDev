@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Forms.htm
+        </title>
+    </head>
+    <body>
+        <fieldset>
+            <legend aligh="top">Login</legend>
+            <label for="usname">UserName*</label><br>
+             <input type="text" id="usname" name="usname"><br>
+          <label for="pass">Password*</label><br>
+           <input type="text" id="pass" name="pass">
+        </fieldset>
+        <fieldset>
+            <legend align="top">Gender*</legend>
+            <input type="radio" id="m" name="m">
+            <label for="m">Male</label>
+            <input type="radio" id="f" name="f">
+            <label form="f">Female</label>
+           
+        </fieldset>
+        <fieldset>
+            <legend aligh="top">Programming Skill</legend>
+            <input type="checkbox" id="j" name="j">
+            <label for="j">Java</label>
+            <input type="checkbox" checked>
+            <label form="c1">C++</label>
+            <input type="checkbox" id="c" name="c">
+            <label for="c">C</label>
+           
+        </fieldset>
+        <fieldset>
+            <legend align="top">Fruit</legend>
+            <label for="fruits">Choose a fruit:</label>
+      <select name="fruits" id="fruits">
+        <optgroup label="Pome">
+            <option value="app">apples</option>
+            <option value="pea">pears</option>
+        </optgroup>
+       <optgroup label="Citrus">
+        <option value="or">Oranges</option>
+        <option value="gr">Grapefruit</option>
+        <option value="man">Mandarin</option>
+        <option value="li">Limes</option>
+       </optgroup>
+      <optgroup label="Stone">
+
+      </optgroup>
+         <option value="peach">Peaches</option>
+         <option value="apri">Apricotes</option>
+         <option value="plum">Plums</option>
+         <option value="nect">Nectarines</option>
+    </optgroup>
+    <optgroup label="Exotic">
+        <option value="mang">mangoes</option>
+        <option value="ban">bananas</option>
+    </optgroup>
+      
+      </select>
+        </fieldset>
+        <textarea rows="10" cols="100" name="comment" form="usrform">
+            Enter your comments here</textarea><br>
+            <input type="button" onclick="alert('SEND')" value="SEND">
+            <input type="button" onclick="alert('RESEST')" value="RESET">
+
+    </body>
+</html>
