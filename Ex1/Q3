@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>birthday.html</title>
+        <style>
+            .birth
+            {
+            max-width: 500px;
+            margin: auto;
+            }
+        </style>
+    </head>
+    <body style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/038/957/231/small_2x/ai-generated-elegant-pink-balloon-and-ribbon-happy-birthday-celebration-card-banner-template-background-photo.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+        
+        <div class="birth">
+             <h1 style="color:goldenrod">Happy birthday!</h1>
+             <img src='https://c.tenor.com/xYMNJENkIEkAAAAd/happy-birthday-happy-birthday-to-you.gif' alt="cake" class="center">
+             <h2>Click this button to go back!</h2>
+      <a href="greeting.htm">Click Me!</a>
+        </div>
+    </body>
+</html>
