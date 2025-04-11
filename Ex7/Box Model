@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model Example</title>
+    <style>
+        .container {
+            width: 550px; 
+            margin: 25px auto; 
+            border: 1px dashed gray; 
+            background-color: rgb(230, 230, 14); 
+        }
+
+        .content {
+            width: 460px; 
+            height: 100px; 
+            margin: 25px;
+           border:20px dashed yellow;
+            border: 6px solid green; 
+            padding: 20px; 
+            background-color: #0000ff; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <p>I love my college life at Vit<br>I like having fun with my friends.<br> I like attending the events.</p>
+        </div>
+    </div>
+
+</body>
+</html>
