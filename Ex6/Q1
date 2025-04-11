@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn Data Science</title>
+</head>
+<body>
+    <div style="border: 2px solid orange; width: 300px; padding: 10px; text-align: center;">
+        <div style="background-color: orange; color: white; font-weight: bold; padding: 2px;">
+            LEARN DATA SCIENCE!
+        </div>
+        <ul style="list-style-type: circle; text-align: left; margin-top: 10px; color: #4169e1; font-family: Arial, sans-serif;">
+            <li>Unlimited jobs</li>
+            <li>Best benefits anywhere</li>
+            <li>Call now for an appointment</li>
+        </ul>
+    </div>
+</body>
+</html>
