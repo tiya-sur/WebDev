@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Animals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pet Animals</h1>
+    </header>
+
+    <section class="descriptions">
+        <div>
+            <h3>Dogs</h3>
+            <p>Dogs are loyal companions known for their intelligence and playful nature.</p>
+        </div>
+        <div>
+            <h3>Cats</h3>
+            <p>Cats are independent creatures, often known for their grace and mysterious charm.</p>
+        </div>
+        <div>
+            <h3>Birds</h3>
+            <p>Birds bring a touch of nature indoors with their colorful plumage and melodious songs.</p>
+        </div>
+        <div>
+            <h3>Fish</h3>
+            <p>Watching fish swim peacefully in an aquarium can be a relaxing and mesmerizing experience.</p>
+        </div>
+    </section>
+
+    <section class="playing-dog">
+        <h2>Dog Playing with Ball</h2>
+        <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle id="ball" cx="100" cy="100" r="20" fill="red" />
+        </svg>
+    </section>
+
+</body>
+</html>
