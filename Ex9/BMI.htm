@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script>
+        function calculateBMI() {
+            // Get the input values
+            const weight = parseFloat(document.getElementById("weight").value);
+            const heightFeet = parseFloat(document.getElementById("heightFeet").value);
+            const heightInches = parseFloat(document.getElementById("heightInches").value);
+            const gender = document.getElementById("gender").value;
+
+            // Validate inputs
+            if (isNaN(weight) || isNaN(heightFeet) || isNaN(heightInches)) {
+                alert("Please enter valid values for weight and height.");
+                return;
+            }
+
+            // Convert height to inches
+            const totalHeightInches = (heightFeet * 12) + heightInches;
+
+            // Calculate BMI
+            const bmi = (weight / (totalHeightInches * totalHeightInches)) * 703;
+
+            // Determine BMI status
+            let status;
+            if (bmi < 18.5) {
+                status = "Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                status = "Ideal Range";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                status = "Overweight";
+            } else {
+                status = "Obese";
+            }
+
+            // Display BMI and status
+            alert(`Your BMI is ${bmi.toFixed(2)} (${status})`);
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 300px; margin: auto; border: 1px solid black; padding: 10px; font-family: Arial;">
+        <h2 style="text-align: center;">BMI Calculator</h2>
+        <select id="gender" style="width: 100%; margin-bottom: 10px;">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="weight">Enter Your Weight:</label>
+        <input type="number" id="weight" placeholder="(in pounds)" style="width: 100%; margin-bottom: 10px;">
+
+        <label for="heightFeet">Enter Your Height:</label>
+<div style="margin-bottom: 10px;">
+    <input type="number" id="heightFeet" placeholder="(feet)" style="width: 100%; margin-bottom: 5px;">
+    <input type="number" id="heightInches" placeholder="(inches)" style="width: 100%;">
+</div>
+
+
+        <button onclick="calculateBMI()" style="width: 100%; background-color: blue; color: white; border: none; padding: 10px; cursor: pointer;">
+            Calculate
+        </button>
+
+        <div style="margin-top: 10px; text-align: center; font-weight: bold;">YOUR BMI</div>
+        <input type="text" id="bmiDisplay" readonly style="width: 100%; text-align: center; margin-top: 5px;">
+    </div>
+</body>
+</html>

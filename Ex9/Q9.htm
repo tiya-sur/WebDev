@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <script>
+        function reserveSeat() {
+            // Seating chart: 0 means empty, 1 means occupied
+            const seating = Array(10).fill(0);
+
+            while (true) {
+                // Ask for seat preference
+                const choice = prompt("Enter 1 for First Class (Seats 1-5), or 2 for Economy Class (Seats 6-10). Type 'exit' to quit:");
+
+                if (choice === "exit") {
+                    alert("Thank you for using the reservation system.");
+                    break;
+                }
+
+                // Ensure valid input
+                if (choice !== "1" && choice !== "2") {
+                    alert("Invalid choice. Please enter 1 or 2.");
+                    continue;
+                }
+
+                const name = prompt("Please enter your name:");
+                let seatAssigned = false;
+
+                // First Class selection
+                if (choice === "1") {
+                    for (let i = 0; i < 5; i++) {
+                        if (seating[i] === 0) {
+                            seating[i] = 1; // Mark seat as taken
+                            alert(`Boarding Pass\nName: ${name}\nSeat: ${i + 1}\nClass: First Class`);
+                            seatAssigned = true;
+                            break;
+                        }
+                    }
+
+                    if (!seatAssigned) {
+                        // Ask if Economy is acceptable
+                        const acceptEconomy = confirm("First Class is full. Would you like to be placed in Economy?");
+                        if (acceptEconomy) {
+                            for (let i = 5; i < 10; i++) {
+                                if (seating[i] === 0) {
+                                    seating[i] = 1; // Mark seat as taken
+                                    alert(`Boarding Pass\nName: ${name}\nSeat: ${i + 1}\nClass: Economy`);
+                                    seatAssigned = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Economy selection
+                if (choice === "2") {
+                    for (let i = 5; i < 10; i++) {
+                        if (seating[i] === 0) {
+                            seating[i] = 1; // Mark seat as taken
+                            alert(`Boarding Pass\nName: ${name}\nSeat: ${i + 1}\nClass: Economy`);
+                            seatAssigned = true;
+                            break;
+                        }
+                    }
+
+                    if (!seatAssigned) {
+                        // Ask if First Class is acceptable
+                        const acceptFirstClass = confirm("Economy is full. Would you like to be placed in First Class?");
+                        if (acceptFirstClass) {
+                            for (let i = 0; i < 5; i++) {
+                                if (seating[i] === 0) {
+                                    seating[i] = 1; // Mark seat as taken
+                                    alert(`Boarding Pass\nName: ${name}\nSeat: ${i + 1}\nClass: First Class`);
+                                    seatAssigned = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // If no seat is available
+                if (!seatAssigned) {
+                    alert("Sorry, the flight is fully booked.");
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Airline Reservation System</h1>
+    <button onclick="reserveSeat()" style="display: block; margin: 10px auto; padding: 10px;">Start Reservation</button>
+</body>
+</html>
