@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Categorization</title>
+    <script>
+        function categorizeTemperatures() {
+          
+            const temperatures = [55, 62, 68, 74, 59, 45, 41, 58, 60, 67, 65, 78, 82, 88, 91, 92, 90, 93, 87, 80, 78, 79, 72, 68, 61, 59, 55, 65];
+            let hotDays = 0, pleasantDays = 0, coldDays = 0;
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+            temperatures.forEach(temp => {
+                let category;
+                if (temp >= 85) {
+                    category = "HOT";
+                    hotDays++;
+                } else if (temp >= 60) {
+                    category = "PLEASANT";
+                    pleasantDays++;
+                // } else {
+                    category = "COLD";
+                    coldDays++;
+                }
+                const row = `<tr>
+                                <td>${temp}</td>
+                                <td>${category}</td>
+                             </tr>`;
+                tableBody.innerHTML += row;
+            });
+            document.getElementById("hotDays").innerText = hotDays;
+            document.getElementById("pleasantDays").innerText = pleasantDays;
+            document.getElementById("coldDays").innerText = coldDays;
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">NEW YORK City Temperature Analysis</h1>
+    <button onclick="categorizeTemperatures()" style="display: block; margin: 10px auto; padding: 10px;">Analyze Temperatures</button>
+
+    <h3>Summary:</h3>
+    <ul>
+        <li>Number of HOT days: <span id="hotDays">0</span></li>
+        <li>Number of PLEASANT days: <span id="pleasantDays">0</span></li>
+        <li>Number of COLD days: <span id="coldDays">0</span></li>
+    </ul>
+
+    <h3>Temperature Categories:</h3>
+    <table border="1" style="width: 50%; margin: auto; text-align: center;">
+        <thead>
+            <tr>
+                <th>Temperature (°F)</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+</body>
+</html>
