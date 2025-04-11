@@ -1,0 +1,204 @@
+# Create a dynamic table with three rows and three columns
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="addRowButton">Add</button>
+<div id="table-container">
+    <table id="dynamicTable">
+    </table>
+</div>
+
+<script>
+   
+    const table = document.getElementById('dynamicTable');
+    const addRowButton = document.getElementById('addRowButton');
+
+    
+    addRowButton.addEventListener('click', function() {
+       
+        const row = document.createElement('tr');
+        for (let i = 0; i < 3; i++) {
+            const cell = document.createElement('td');
+            cell.textContent = `Row ${table.rows.length + 1}, Column ${i + 1}`; 
+            row.appendChild(cell);
+        }
+
+    
+        table.appendChild(row);
+    });
+</script>
+
+</body>
+</html>
+
+# Change the color of the Button from red to green color on Mouse Over
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover and Textbox Focus</title>
+    <style>
+        button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="colorButton" style="background-color: red;">Hover Over Me</button>
+
+<script>
+    const colorButton = document.getElementById('colorButton');
+
+    colorButton.addEventListener('mouseover', function() {
+        colorButton.style.backgroundColor = 'green';  // Change to green on hover
+    });
+
+    colorButton.addEventListener('mouseout', function() {
+        colorButton.style.backgroundColor = 'red';  // Change back to red
+    });
+</script>
+
+</body>
+</html>
+
+
+  # Change the color of the Textbox from green to yellow color on Focus and display a greeting message on Change Note: Both button and textbox should be created using CreateElement
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox Focus and Change</title>
+    <style>
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="colorTextbox" placeholder="Type something...">
+
+<script>
+    const colorTextbox = document.getElementById('colorTextbox');
+
+    colorTextbox.addEventListener('focus', function() {
+        colorTextbox.style.backgroundColor = 'yellow';  // Change to yellow on focus
+    });
+
+    colorTextbox.addEventListener('change', function() {
+        alert('Hello! You changed the text in the textbox.');  // Show greeting message
+    });
+</script>
+
+</body>
+</html>
+
+# Create an input field and a button. When the button is double clicked, add the input text as a new item to an unordered list.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List Item</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="inputField" placeholder="Enter text">
+<button id="addButton">Double Click to Add Item</button>
+
+<ul id="itemList">
+</ul>
+
+<script>
+    const inputField = document.getElementById('inputField');
+    const addButton = document.getElementById('addButton');
+    const itemList = document.getElementById('itemList');
+
+    addButton.addEventListener('dblclick', function() {
+        const inputText = inputField.value.trim();  // Get the input value and trim any extra spaces
+        
+        if (inputText !== '') {  
+            const listItem = document.createElement('li');  
+            listItem.textContent = inputText;  
+            itemList.appendChild(listItem);  
+        }
+        
+        inputField.value = '';
+    });
+</script>
+
+</body>
+</html>
+#Create two input fields: one for accepting input and another for counting and displaying the number of times any key is pressed.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press Counter</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="inputField" placeholder="Type something..." />
+
+<input type="text" id="keyPressCounter" placeholder="Key Press Count" disabled />
+
+<script>
+ 
+    const inputField = document.getElementById('inputField');
+    const keyPressCounter = document.getElementById('keyPressCounter');
+
+    let keyPressCount = 0;
+
+    
+    inputField.addEventListener('keypress', function() {
+        keyPressCount++;  
+        keyPressCounter.value = keyPressCount;  
+    });
+</script>
+
+</body>
+</html>
+
