@@ -1,0 +1,9 @@
+<script>
+
+reg=(parseInt(prompt("Enter your regitser number")));
+
+student=confirm("Are you a student?");
+
+student?alert("okay"):alert("good");
+</script>
+
