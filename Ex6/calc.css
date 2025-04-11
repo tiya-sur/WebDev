@@ -1,0 +1,40 @@
+#calculator {
+    width: 250px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background-color: #a7c9e2; /* Light blue background */
+}
+
+#display {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    text-align: right;
+    border: none;
+    background-color: #fff;
+    font-size: 24px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.pink {
+    background-color: #ffd9e1; /* Pink color */
+}
+
+.purple {
+    background-color: #d8b6ff; /* Purple color */
+}
+
+.yellow {
+    background-color: #f7f093; /* Yellow color */
+}
