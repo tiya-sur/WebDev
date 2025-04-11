@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Grocery Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #8aa382;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #2d2d2d;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d2d2d;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .product-row img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .product-row label {
+            flex: 1;
+        }
+
+        .product-row input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .product-row input[type="number"] {
+            width: 60px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #a6794d;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #8a5f3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Order Form</h1>
+        <form id="orderForm" action="receipt.htm" method="get">
+            <label>Customer Name:</label>
+            <input type="text" name="customerName" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phoneNumber" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <hr>
+            <h2>Products</h2>
+
+            <div class="product-row">
+                <img src="https://th.bing.com/th/id/OIP.hVjhVt5EiigNSJr1QK93AAHaIJ?rs=1&pid=ImgDetMain" alt="Apple">
+                <input type="checkbox" name="product" value="Apple,10">
+                <label>Apple - $10</label>
+                <input type="number" name="quantityApple"  min="0" step="1">
+                <label>kg</label>
+            </div>
+
+            <div class="product-row">
+                <img src="https://th.bing.com/th/id/OIP.Ae_k4JX25bScVh00mnmZ5gHaFu?rs=1&pid=ImgDetMain" alt="Banana">
+                <input type="checkbox" name="product" value="Banana,5">
+                <label>Banana - $5 </label>
+                <input type="number" name="quantityBanana"  min="0" step="1">
+                <label>kg</label>
+            </div>
+
+            <div class="product-row">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/01/avocado-45bccf2-scaled.jpg?quality=45&resize=960,872" alt="Avocado">
+                <input type="checkbox" name="product" value="Avocado,7">
+                <label>Avocado - $7 </label>
+                <input type="number" name="quantityAvocado"  min="0" step="1">
+                <label>kg</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
