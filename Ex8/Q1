@@ -1,0 +1,47 @@
+<script>
+v1=parseInt(prompt("Number 1:"));
+v2=parseInt(prompt("Number 2:"));
+a=v1+v2
+alert("addition: "+ a);
+b=v1-v2
+alert("subtraction: "+ b);
+c=v1*v2
+alert("multiplication: "+ c);
+d=v1/v2
+alert("Division: " + d);
+
+
+</script>
+<script>
+age=(parseInt(prompt("Enter your age:")));
+if(age>=18)
+{
+alert("eligible to drive!");
+}
+else{
+alert("Not eligible to drive!");
+}
+</script>
+<script>
+rate=45;
+hours=(parseInt(prompt("Enter Labour Hours:")));
+mat=(parseInt(prompt("Enter Cost of Materials:")));
+b=rate*hours
+a=b+mat;
+alert("Total Charge: "+ a);
+</script>
+
+<script>
+reg=(parseInt(prompt("Enter your regitser number")));
+name=(parseInt(prompt("Enter name:")));
+
+</script>
+<script>
+
+reg=(parseInt(prompt("Enter your regitser number")));
+
+student=confirm("Are you a student?");
+
+student?alert("okay"):alert("good");
+</script>
+
