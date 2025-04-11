@@ -1,0 +1,186 @@
+#) Create a simple stopwatch with "Start", "Stop", and "Reset" buttons using JavaScript event listeners
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Stopwatch</title>
+    <style>
+        #stopwatch {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+<div id="stopwatch">0:00</div>
+<button id="startBtn">Start</button>
+<button id="stopBtn" disabled>Stop</button>
+<button id="resetBtn">Reset</button>
+
+<script>
+
+    const stopwatch = document.getElementById('stopwatch');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    let timer = null;  
+    let minutes = 0;
+    let seconds = 0;
+
+    
+    function updateStopwatch() {
+       
+        stopwatch.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+    startBtn.addEventListener('click', function() {
+    
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+
+       
+        timer = setInterval(function() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+            }
+            updateStopwatch();
+        }, 1000);
+    });
+
+  
+    stopBtn.addEventListener('click', function() {
+        
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+
+        clearInterval(timer);
+    });
+
+    resetBtn.addEventListener('click', function() {
+    
+        minutes = 0;
+        seconds = 0;
+        updateStopwatch();
+
+        clearInterval(timer);
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+    });
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Age on Mouseover</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="date" id="dob" placeholder="Enter Date of Birth">
+
+<p id="ageDisplay"></p>
+
+<script>
+  
+    const dobInput = document.getElementById('dob');
+    const ageDisplay = document.getElementById('ageDisplay');
+
+    function calculateAge(birthDate) {
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+
+        
+        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        return age;
+    }
+
+   
+    dobInput.addEventListener('mouseover', function() {
+        const dobValue = dobInput.value;
+
+        if (dobValue) {
+            const birthDate = new Date(dobValue);
+            const age = calculateAge(birthDate);
+            ageDisplay.textContent = `Your Age is: ${age} years`;
+        } else {
+            ageDisplay.textContent = 'Please enter your Date of Birth';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+#Create a textarea with a character counter that updates dynamically as the user types using an event listener
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <style>
+        textarea {
+            padding: 10px;
+            width: 300px;
+            height: 150px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        #charCount {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+<textarea id="textarea" placeholder="Start typing..."></textarea>
+
+<p id="charCount">Characters: 0</p>
+
+<script>
+    
+    const textarea = document.getElementById('textarea');
+    const charCountDisplay = document.getElementById('charCount');
+
+    textarea.addEventListener('input', function() {
+        const charCount = textarea.value.length;  
+        charCountDisplay.textContent = `Characters: ${charCount}`; 
+    });
+</script>
+
+</body>
+</html>
+
+
+
