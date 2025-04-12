@@ -1,0 +1,67 @@
+import React from 'react';
+import ProfileImage from './ProfileImage';
+import UserInfo from './UserInfo';
+import UserPosts from './UserPosts';
+
+const mockUser = {
+  name: "Tiya Sur",
+  email: "tiyasur@gmail.com",
+  bio: "Full-stack developer passionate about creating beautiful and functional web applications.",
+  location: "Kolkata,India",
+  website: "https://tiya.dev",
+  imageUrl: "/tiya.jpg"
+};
+
+const mockPosts = [
+  {
+    id: 1,
+    title: "Building Modern Web Applications",
+    content: "Today I want to share my experience with React and TypeScript. These tools have revolutionized how we build web applications...",
+    likes: 124,
+    comments: 18,
+    date: "2h ago"
+  },
+  {
+    id: 2,
+    title: "The Power of Tailwind CSS",
+    content: "Tailwind CSS has changed my approach to styling. Here's why I think it's the future of CSS frameworks...",
+    likes: 89,
+    comments: 12,
+    date: "1d ago"
+  },
+  {
+    id: 3,
+    title: "State Management in 2024",
+    content: "Let's explore the current state management solutions and when to use each one...",
+    likes: 156,
+    comments: 24,
+    date: "3d ago"
+  }
+];
+
+const ProfilePage: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
+      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 h-48"></div>
+          <div className="px-6 py-8">
+            <div className="flex flex-col md:flex-row md:space-x-8">
+              <div className="-mt-24">
+                <ProfileImage imageUrl={mockUser.imageUrl} name={mockUser.name} />
+              </div>
+              <div className="mt-6 md:mt-0 flex-grow">
+                <UserInfo {...mockUser} />
+              </div>
+            </div>
+            <div className="mt-12">
+              <UserPosts posts={mockPosts} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProfilePage;
