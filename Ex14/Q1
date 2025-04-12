@@ -1,0 +1,35 @@
+#app.js:-
+import React from 'react';
+import ImageDisplay from  './components/ImageDisplay';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>React Image Display Example</h1>
+      <ImageDisplay />
+    </div>
+  );
+}
+
+export default App;
+
+ImageDisplay.js:-
+/ src/components/ImageDisplay.js
+import React from 'react';
+import srcImage from '../Images/src-image.jpg'; 
+
+function ImageDisplay() {
+  return (
+    <div>
+      <h2>Image from Public Folder</h2>
+      
+      <img src={${process.env.PUBLIC_URL}/Images/public-image.jpg} alt="Public Folder" width="300" />
+
+      <h2>Image from Src Folder</h2>
+      <img src={srcImage} alt="Src Folder" width="300" />
+    </div>
+  );
+}
+
+export default ImageDisplay;
+
