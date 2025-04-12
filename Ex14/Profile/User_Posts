@@ -1,0 +1,46 @@
+import React from 'react';
+import { MessageSquare, Heart } from 'lucide-react';
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  likes: number;
+  comments: number;
+  date: string;
+}
+
+interface UserPostsProps {
+  posts: Post[];
+}
+
+const UserPosts: React.FC<UserPostsProps> = ({ posts }) => {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-xl font-semibold text-gray-900">Recent Posts</h2>
+      <div className="space-y-4">
+        {posts.map((post) => (
+          <div key={post.id} className="bg-white rounded-lg shadow p-6 space-y-3">
+            <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
+            <p className="text-gray-700">{post.content}</p>
+            <div className="flex items-center justify-between text-gray-500 text-sm">
+              <div className="flex space-x-4">
+                <div className="flex items-center space-x-1">
+                  <Heart size={16} />
+                  <span>{post.likes}</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <MessageSquare size={16} />
+                  <span>{post.comments}</span>
+                </div>
+              </div>
+              <span>{post.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default UserPosts;
