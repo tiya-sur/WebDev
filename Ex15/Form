@@ -1,0 +1,86 @@
+FormWithRef
+
+import React, { useRef } from 'react';
+
+const FormWithRef = () => {
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted with useRef:', {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+    });
+   
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Name:</label>
+        <input type="text" ref={nameRef} />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" ref={emailRef} />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default FormWithRef;
+
+FormwithState:-
+import React, { useState } from 'react';
+
+const FormWithState = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+    console.log('Form submitted with useState:', { name, email });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Name:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <p>Name: {name}</p> 
+      </div>
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <p>Email: {email}</p>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default FormWithState;
+
+App.js
+import React from 'react';
+import FormWithRef from './FormWithRef'; // or import FormWithRef from './FormWithRef';
+
+function App() {
+  return (
+    <div>
+      <FormWithRef /> {/* Or <FormWithRef /> */}
+    </div>
+  );
+}
+
+export default App;
