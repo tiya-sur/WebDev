@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px solid black;
+        }
+        .box {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        #box1 { background: red; top: 50px; left: 50px; z-index: 1; }
+        #box2 { background: blue; top: 100px; left: 100px; z-index: 2; }
+        #box3 { background: green; top: 150px; left: 150px; z-index: 3; }
+        .controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Change Z-Index of Overlapping Elements</h2>
+    <div class="container">
+        <div id="box1" class="box">Box 1</div>
+        <div id="box2" class="box">Box 2</div>
+        <div id="box3" class="box">Box 3</div>
+    </div>
+
+    <div class="controls">
+        <div>
+            <h3>Box 1 (Red) - Z-Index: <span id="z1">1</span></h3>
+            <button onclick="changeZIndex('box1', 1)">Increase</button>
+            <button onclick="changeZIndex('box1', -1)">Decrease</button>
+        </div>
+        <div>
+            <h3>Box 2 (Blue) - Z-Index: <span id="z2">2</span></h3>
+            <button onclick="changeZIndex('box2', 1)">Increase</button>
+            <button onclick="changeZIndex('box2', -1)">Decrease</button>
+        </div>
+        <div>
+            <h3>Box 3 (Green) - Z-Index: <span id="z3">3</span></h3>
+            <button onclick="changeZIndex('box3', 1)">Increase</button>
+            <button onclick="changeZIndex('box3', -1)">Decrease</button>
+        </div>
+    </div>
+
+    <script>
+        function changeZIndex(boxId, change) {
+            let box = document.getElementById(boxId);
+            let zIndex = parseInt(window.getComputedStyle(box).zIndex);
+            zIndex += change;
+            box.style.zIndex = zIndex;
+            
+            // Update displayed z-index value
+            document.getElementById('z' + boxId.slice(-1)).textContent = zIndex;
+        }
+    </script>
+
+</body>
+</html>
