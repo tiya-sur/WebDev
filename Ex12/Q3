@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Canvas to draw the clock -->
+<canvas id="clock" width="400" height="400"></canvas>
+
+<script>
+    // Access the canvas element and get the 2D context
+    const canvas = document.getElementById('clock');
+    const ctx = canvas.getContext('2d');
+
+    const clockRadius = 150; // Radius of the clock
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    // Function to draw the clock face, hands, and markings
+    function drawClock() {
+        // Clear the canvas for each frame
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the clock face (circle)
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, clockRadius, 0, 2 * Math.PI);
+        ctx.fillStyle = '#f3f3f3'; // Light gray background
+        ctx.fill();
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = '#333'; // Dark border color
+        ctx.stroke();
+
+        // Draw the clock center pivot point
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = '#333';
+        ctx.fill();
+
+        // Draw the hour, minute, and second hands
+        const now = new Date();
+        const hour = now.getHours() % 12; // 12-hour format
+        const minute = now.getMinutes();
+        const second = now.getSeconds();
+
+        // Hour hand
+        const hourAngle = (hour % 12) * 30 + (minute / 2); // 30 degrees per hour + minute influence
+        drawHand(hourAngle, clockRadius * 0.5, 8, '#333');
+
+        // Minute hand
+        const minuteAngle = minute * 6 + (second / 10); // 6 degrees per minute + second influence
+        drawHand(minuteAngle, clockRadius * 0.7, 6, '#555');
+
+        // Second hand
+        const secondAngle = second * 6; // 6 degrees per second
+        drawHand(secondAngle, clockRadius * 0.8, 2, '#f00'); // Red color for second hand
+
+        // Draw the hour markings (1 to 12)
+        drawHourMarkings();
+
+        // Request the next frame to animate the clock
+        requestAnimationFrame(drawClock);
+    }
+
+    // Function to draw a hand (hour, minute, second)
+    function drawHand(angle, length, width, color) {
+        const radians = (angle - 90) * Math.PI / 180; // Convert angle to radians and adjust for top position
+        const xEnd = centerX + length * Math.cos(radians);
+        const yEnd = centerY + length * Math.sin(radians);
+
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(xEnd, yEnd);
+        ctx.lineWidth = width;
+        ctx.strokeStyle = color;
+        ctx.stroke();
+    }
+
+    // Function to draw the hour markings (1 to 12)
+    function drawHourMarkings() {
+        ctx.fillStyle = '#333'; // Color for hour numbers
+        ctx.font = '16px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        for (let i = 1; i <= 12; i++) {
+            const angle = (i - 3) * 30; // Adjust to start at 3 o'clock
+            const radians = angle * Math.PI / 180;
+
+            const x = centerX + (clockRadius - 20) * Math.cos(radians);
+            const y = centerY + (clockRadius - 20) * Math.sin(radians);
+
+            ctx.fillText(i, x, y);
+        }
+    }
+
+    // Start the clock
+    drawClock();
+</script>
+
+</body>
+</html>
