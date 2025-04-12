@@ -1,0 +1,39 @@
+App.js
+
+import React from 'react';
+import StyledButton from './StyledButton';
+const MyComponent = () => {
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
+  return (
+    <div>
+      <StyledButton text="Click Me" onClick={handleClick} />
+    </div>
+  );
+};
+
+export default MyComponent;
+styles.css
+.styled-button {
+    background-color: rgb(13, 213, 130);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+Styledbutton.js
+
+import React from 'react';
+import './styles.css'; 
+
+const StyledButton = ({ text, onClick }) => {
+  return (
+    <button className="styled-button" onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+export default StyledButton;
