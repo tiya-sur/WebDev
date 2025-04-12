@@ -1,0 +1,62 @@
+JokeFetcher.js
+import React, { useState, useEffect } from 'react';
+const JokeFetcher = () => {
+  const [joke, setJoke] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchJoke = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('https://icanhazdadjoke.com/', {
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setJoke(data.joke);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchJoke();
+  }, []); // Empty dependency array means this effect runs only once on mount
+
+  const refreshJoke = () => {
+    fetchJoke();
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  return (
+    <div>
+      <p>{joke}</p>
+      <button onClick={refreshJoke}>Refresh Joke</button>
+    </div>
+  );
+};
+export default JokeFetcher;
+
+App.js
+import React from 'react';
+import JokeFetcher from './JokeFetcher';
+function App() {
+  return (
+    <div>
+      <JokeFetcher />
+    </div>
+  );
+}
+export default App;
