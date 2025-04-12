@@ -1,0 +1,116 @@
+import React from 'react';
+import { Camera } from 'lucide-react';
+
+interface ProfileImageProps {
+  imageUrl: string;
+  name: string;
+}
+
+const ProfileImage: React.FC<ProfileImageProps> = ({ imageUrl, name }) => {
+  return (
+    <div className="relative">
+      <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+        <img
+          src={imageUrl}
+          alt={${name}'s profile}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <button
+        className="absolute bottom-0 right-0 bg-blue-500 p-2 rounded-full text-white hover:bg-blue-600 transition-colors"
+        aria-label="Change profile picture"
+      >
+        <Camera size={20} />
+      </button>
+    </div>
+  );
+}
+
+export default ProfileImage;
+#UserInfo.js:-
+import React from 'react';
+import { Mail, MapPin, Link as LinkIcon } from 'lucide-react';
+
+interface UserInfoProps {
+  name: string;
+  email: string;
+  bio: string;
+  location: string;
+  website: string;
+}
+
+const UserInfo: React.FC<UserInfoProps> = ({ name, email, bio, location, website }) => {
+  return (
+    <div className="space-y-4">
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900">{name}</h1>
+        <div className="flex items-center space-x-2 text-gray-600 mt-1">
+          <Mail size={16} />
+          <span>{email}</span>
+        </div>
+        <div className="flex items-center space-x-2 text-gray-600 mt-1">
+          <MapPin size={16} />
+          <span>{location}</span>
+        </div>
+        {website && (
+          <div className="flex items-center space-x-2 text-blue-500 mt-1">
+            <LinkIcon size={16} />
+            <a href={website} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              {website}
+            </a>
+          </div>
+        )}
+      </div>
+      <p className="text-gray-700">{bio}</p>
+    </div>
+  );
+}
+
+export default UserInfo;
+#UserPosts.js:-
+import React from 'react';
+import { MessageSquare, Heart } from 'lucide-react';
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  likes: number;
+  comments: number;
+  date: string;
+}
+
+interface UserPostsProps {
+  posts: Post[];
+}
+
+const UserPosts: React.FC<UserPostsProps> = ({ posts }) => {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-xl font-semibold text-gray-900">Recent Posts</h2>
+      <div className="space-y-4">
+        {posts.map((post) => (
+          <div key={post.id} className="bg-white rounded-lg shadow p-6 space-y-3">
+            <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
+            <p className="text-gray-700">{post.content}</p>
+            <div className="flex items-center justify-between text-gray-500 text-sm">
+              <div className="flex space-x-4">
+                <div className="flex items-center space-x-1">
+                  <Heart size={16} />
+                  <span>{post.likes}</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <MessageSquare size={16} />
+                  <span>{post.comments}</span>
+                </div>
+              </div>
+              <span>{post.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default UserPosts;
