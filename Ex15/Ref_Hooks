@@ -1,0 +1,40 @@
+App.js
+import React from 'react';
+import FocusInput from './FocusInput';
+
+function App() {
+  return (
+    <div>
+      <FocusInput />
+    </div>
+  );
+}
+
+export default App;
+FocusInput.js
+
+import React, { useRef, useEffect } from 'react';
+
+const FocusInput = () => {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  useEffect(() => {
+    // Optional: Focus the input when the component mounts
+    // focusInput();
+  }, []);
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Enter something..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+};
+
+export default FocusInput;
