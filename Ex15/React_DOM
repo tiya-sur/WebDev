@@ -1,0 +1,41 @@
+import React from 'react'; // Correct: Only one import of React
+import ReactDOM from 'react-dom'; // You'll need this in index.js, not App.js
+const Header = ({ title }) => {
+  return <h1>{title}</h1>;
+};
+const Content = () => {
+  const [joke, setJoke] = React.useState('');
+  const fetchJoke = async () => {
+    try {
+      const response = await fetch('https://icanhazdadjoke.com/', {
+        headers: { Accept: 'application/json' },
+      });
+      const data = await response.json();
+      setJoke(data.joke);
+    } catch (error) {
+      setJoke('Failed to fetch a joke.');
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={fetchJoke}>Get a Joke</button>
+      {joke && <p>{joke}</p>}
+    </div>
+  );
+};
+const Footer = () => {
+  return <footer><p>&copy; 2024 My React App</p></footer>;
+};
+const App = () => {
+  return (
+    <div>
+      <Header title="My React App" />
+      <Content />
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
+
