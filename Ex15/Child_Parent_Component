@@ -1,0 +1,42 @@
+Child.js
+import React from 'react';
+
+const Child = ({ message }) => {
+  return (
+    <div>
+      <p>Message from Parent: {message}</p>
+    </div>
+  );
+};
+
+export default Child;
+Parent.js
+import React from 'react';
+import Child from './Child';
+
+const Parent = () => {
+  const messageToSend = "Hello from the Parent component!";
+
+  return (
+    <div>
+      <h2>Parent Component</h2>
+      <Child message={messageToSend} />
+    </div>
+  );
+};
+
+export default Parent;
+
+App.js
+import React from 'react';
+import Parent from './Parent';
+
+function App() {
+  return (
+    <div>
+      <Parent />
+    </div>
+  );
+}
+
+export default App;
